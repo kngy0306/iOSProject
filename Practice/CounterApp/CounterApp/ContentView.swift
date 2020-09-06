@@ -13,19 +13,26 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("\(number)")
+            ZStack{
+                Image("counter")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                Text("\(number)")
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
+            }
             Button(action: {self.number += 1}){
                 Text("カウント")
             }
         }
     }
-//    func text() -> Text{
-//        Text("カウント")
-//    }
+
+    //    func count(){
+    //        self.number += 1
+    //    }
+    //    func text() -> Text{
+    //        Text("カウント")
+    //    }
     
-//    func count(){
-//        self.number += 1
-//    }
 }
 
 struct ContentView_Previews: PreviewProvider {
